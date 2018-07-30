@@ -1,0 +1,75 @@
+@model PruebaTecnica.Models.dbo_Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Usuario</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdUsuario)
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCiudadNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dbo_Ciudad.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTipoDocumento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dbo_TipoDocumento.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroDocumento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroDocumento)
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dbo_Ciudad.Id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+            @Html.ActionLink("Edit", "Edit", new {
+ 						IdUsuario = Model.IdUsuario 
+ 						}) |
+    @Html.ActionLink("Volver al Inicio", "Index")
+</p>
+ 

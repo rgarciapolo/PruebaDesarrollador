@@ -1,0 +1,98 @@
+@model PruebaTecnica.Models.dbo_Usuario
+
+@{
+    ViewBag.Title = "Insertar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Insertar</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Usuario</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdUsuario, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IdUsuario)
+                @Html.ValidationMessageFor(model => model.IdUsuario)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nombre)
+                @Html.ValidationMessageFor(model => model.Nombre)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Direccion, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Direccion)
+                @Html.ValidationMessageFor(model => model.Direccion)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FechaNacimiento, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FechaNacimiento, new { @class = "datepicker" })
+                @Html.ValidationMessageFor(model => model.FechaNacimiento)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdCiudadNacimiento, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Id")
+                @Html.ValidationMessageFor(model => model.IdCiudadNacimiento)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdTipoDocumento, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Id")
+                @Html.ValidationMessageFor(model => model.IdTipoDocumento)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumeroDocumento, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NumeroDocumento)
+                @Html.ValidationMessageFor(model => model.NumeroDocumento)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdCiudad, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Id")
+                @Html.ValidationMessageFor(model => model.IdCiudad)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Insertar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Volver al Inicio", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+ 
